@@ -1,0 +1,11 @@
+<% if @reminders.any?  %>
+  <% @reminders.each do |r| %>
+   <h2><%= r.what %><h2>
+   <h3><%= r.when %><h3>
+   <h3><%= r.where %><h3>
+   <h3><%=link_to 'Edit', edit_reminder_path(r) %><h3>
+   <h3><%=link_to 'Delete', reminder_path(r), method: :delete %><h3>
+  <br><% end %><br>
+<% end %>
+
+<br><%=link_to 'Create new reminder', new_reminder_path(@reminder) %><br>
