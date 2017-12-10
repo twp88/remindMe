@@ -1,3 +1,5 @@
+
+# This is a comment
 class RemindersController < ApplicationController
   def index
     @reminders = Reminder.all
@@ -17,6 +19,10 @@ class RemindersController < ApplicationController
     @reminder.destroy
     flash[:notice] = "Dearly beloved"
     redirect_to '/reminders'
+  end
+
+  def send_all
+
   end
 
 private
