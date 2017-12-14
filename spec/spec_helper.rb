@@ -96,5 +96,6 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
-  require_relative '../app/services/date_filter_service'
+  require_relative '../app/services/retrieve_todays_messages_service'
+  require_relative '../app/services/send_message_service'
 end

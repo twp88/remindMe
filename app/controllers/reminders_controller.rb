@@ -21,12 +21,13 @@ class RemindersController < ApplicationController
     redirect_to '/reminders'
   end
 
-  def send_all
-
+  def show
+    MessageOrganizerService.new.call
+    redirect_to '/reminders'
   end
 
 private
   def reminders_params
-    params.require(:reminder).permit(:what, :when, :where)
+    params.require(:reminder).permit(:what, :time, :where)
   end
 end
