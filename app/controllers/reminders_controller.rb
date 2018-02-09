@@ -1,8 +1,10 @@
 
 # This is a comment
 class RemindersController < ApplicationController
+  before_action :authenticate_user!
+
   def index
-    @reminders = Reminder.all
+    @reminders = current_user.reminders.all
   end
 
   def new
@@ -10,7 +12,7 @@ class RemindersController < ApplicationController
   end
 
   def create
-    @reminder = Reminder.create(reminders_params)
+    @reminder = current_user.reminders.create(reminders_params)
     redirect_to '/reminders'
   end
 
