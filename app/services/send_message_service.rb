@@ -1,8 +1,9 @@
 require 'twilio-ruby'
 
 class SendMessageService
-  def initialize(content)
+  def initialize(content, phone_number)
     @content = content
+    @phone_number = phone_number
   end
 
   def call
@@ -13,7 +14,7 @@ class SendMessageService
 
     message = @client.messages.create(
       body: @content,
-      to: Rails.application.secrets.my_number,
+      to: @phone_number,
       from: Rails.application.secrets.twilio_number
     )
 

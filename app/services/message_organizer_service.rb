@@ -1,4 +1,8 @@
 class MessageOrganizerService
+  def initialize(phone_number)
+    @phone_number = phone_number
+  end
+
   def call
     send_each_message
   end
@@ -11,7 +15,7 @@ class MessageOrganizerService
 
   def send_each_message
     messages.each do |m|
-      SendMessageService.new(m).call
+      SendMessageService.new(m, @phone_number).call
     end
   end
 end

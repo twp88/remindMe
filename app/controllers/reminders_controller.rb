@@ -19,12 +19,12 @@ class RemindersController < ApplicationController
   def destroy
     @reminder = Reminder.find(params[:id])
     @reminder.destroy
-    flash[:notice] = "Dearly beloved"
+    flash[:notice] = 'Dearly beloved'
     redirect_to '/reminders'
   end
 
   def show
-    MessageOrganizerService.new.call
+    MessageOrganizerService.new(current_user.phone_number).call
     redirect_to '/reminders'
   end
 
