@@ -10,4 +10,6 @@
 
 <br><%=link_to 'Create new reminder', new_reminder_path(@reminder) %><br>
 
+<br><%=link_to 'See your tribes', user_tribe_index_path(current_user.id) %><br>
+
 <br><%= button_to 'Send todays reminders', reminders_send_todays_messages_path, method: :get %><br>

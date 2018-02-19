@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :reminders
   get 'reminders/send_todays_messages' => 'reminders#send_todays_messages'
 
-  resources :users
+  resources :users do
+    resources :tribe
+  end
 
-  root to: "reminders#index"
+  root to: 'reminders#index'
 end

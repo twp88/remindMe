@@ -1,0 +1,7 @@
+<% if @tribes %>
+  <%= @tribes %>
+<% else %>
+  <%= "You have no tribes" %>
+<% end %>
+
+<br><%=link_to 'Create new tribes', new_user_tribe_path(current_user.id, @tribe) %><br>

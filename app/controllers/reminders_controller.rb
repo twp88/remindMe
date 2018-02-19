@@ -28,7 +28,8 @@ class RemindersController < ApplicationController
     redirect_to '/reminders'
   end
 
-private
+  private
+
   def reminders_params
     params.require(:reminder).permit(:what, :time, :where)
   end
