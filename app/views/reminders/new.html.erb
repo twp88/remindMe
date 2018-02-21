@@ -1,9 +1,13 @@
 <%= form_for @reminder do |f| %>
-<%= f.label :what %>
-<%= f.text_field :what %>
-<%= f.label :where %>
-<%= f.text_field :where %>
-<%= f.label :time %>
-<%= f.text_field :time %>
-<%= f.submit %>
+  <%= f.label :what %>
+  <%= f.text_field :what %>
+  <%= f.label :where %>
+  <%= f.text_field :where %>
+  <%= f.label :time %>
+  <%= f.text_field :time %>
+  <%= f.submit %>
+<% end %>
+
+<% if @tribes %>
+  <%= options_for_select(@tribes) %>
 <% end %>

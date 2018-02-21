@@ -9,6 +9,7 @@ class RemindersController < ApplicationController
 
   def new
     @reminder = Reminder.new
+    @tribes = Tribe.where(owner_id: current_user.id)
   end
 
   def create

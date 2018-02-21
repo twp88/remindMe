@@ -1,7 +1,7 @@
 class TribesController < ApplicationController
   # before_action :authenticate_user!
   def index
-    @tribe = Tribe.where(id: current_user.tribe_id)
+    @tribe = Tribe.where(owner_id: current_user.id)
   end
 
   def new
@@ -11,11 +11,13 @@ class TribesController < ApplicationController
   def create
     @tribe = Tribe.create(tribes_params)
     current_user.tribe_id = @tribe.id
-    redirect_to "/tribes"
+    @tribe.owner_id = current_user.id
+    @tribe.save
+    redirect_to '/tribes'
   end
 
   def show
-    @tribes = Tribe.all
+    @tribe = Tribe.find(params[:id])
   end
 
   def destroy

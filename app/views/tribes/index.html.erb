@@ -1,6 +1,6 @@
 <% if @tribe %>
   <% @tribe.each do |t| %>
-    <%= t.name %>
+    <br><%= link_to "#{t.name}", tribe_path(t.id) %></br>
   <% end %>
 <% else %>
   <%= "You have no tribes" %>
