@@ -1,7 +1,9 @@
-<% if @tribes %>
-  <%= @tribes %>
+<% if @tribe %>
+  <% @tribe.each do |t| %>
+    <%= t.name %>
+  <% end %>
 <% else %>
   <%= "You have no tribes" %>
 <% end %>
 
-<br><%=link_to 'Create new tribes', new_user_tribe_path(current_user.id, @tribe) %><br>
+<br><%=link_to 'Create new tribes', new_tribe_path(current_user.id) %><br>

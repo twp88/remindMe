@@ -1,3 +1,6 @@
+<%= @tribe %>
 <%= form_for @tribe do |f| %>
-<%= f.submit %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
 <% end %>
