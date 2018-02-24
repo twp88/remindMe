@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :reminders
-  has_many :tribes
+  has_many :tribes, through: :tribe_members
 end

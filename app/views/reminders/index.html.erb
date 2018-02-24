@@ -1,6 +1,6 @@
 <% if @reminders.any?  %>
   <% @reminders.each do |r| %>
-   <h2><%= r.what %><h2>
+   <h2><%= link_to "#{r.what}", edit_reminder_path(r.id) %><h2>
    <h3><%= r.time %><h3>
    <h3><%= r.where %><h3>
    <h3><%=link_to 'Edit', edit_reminder_path(r) %><h3>

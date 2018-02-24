@@ -1,1 +1,11 @@
 <%= @tribe.name %>
+
+<% unless @tribe_members.empty? %>
+  <%= @tribe_members.each do |tm| %>
+    <%= tm.name %>
+  <% end %>
+<% else %>
+  <%= "This tribe has no members!" %>
+<% end %>
+
+<br><%=link_to 'Add tribe members', new_tribe_member_path(:tribe_id => @tribe.id)%><br>
