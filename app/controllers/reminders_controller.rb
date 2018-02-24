@@ -17,6 +17,17 @@ class RemindersController < ApplicationController
     redirect_to '/reminders'
   end
 
+  def edit
+    @reminder = Reminder.find(params[:id])
+    @tribes = Tribe.where(owner_id: current_user.id)
+  end
+
+  def update
+    @reminder = Reminder.find(params[:id])
+    @reminder.update_attributes(reminders_params)
+    redirect_to '/reminders'
+  end
+
   def destroy
     @reminder = Reminder.find(params[:id])
     @reminder.destroy
@@ -32,6 +43,6 @@ class RemindersController < ApplicationController
   private
 
   def reminders_params
-    params.require(:reminder).permit(:what, :time, :where)
+    params.require(:reminder).permit(:what, :time, :where, :tribe_id)
   end
 end

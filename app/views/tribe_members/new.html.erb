@@ -1,0 +1,5 @@
+<%= form_for @tribe_member do |f| %>
+  <%= f.label :select_member %>
+  <%= f.collection_select :user_id, @potential_members, :id, :name, :prompt => true %>
+  <%= f.submit %>
+<% end %>
