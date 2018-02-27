@@ -1,8 +1,8 @@
 <%= @tribe.name %>
 
 <% unless @tribe_members.empty? %>
-  <%= @tribe_members.each do |tm| %>
-    <%= tm.name %>
+  <%= @tribe_members.map do |tm| %>
+    <br><%= tm[:name] %></br>
   <% end %>
 <% else %>
   <%= "This tribe has no members!" %>

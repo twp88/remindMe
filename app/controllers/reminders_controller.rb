@@ -36,6 +36,8 @@ class RemindersController < ApplicationController
   end
 
   def show
+    # Here use new service to collect tribe numbers
+    # Pass these numbers to the following service
     MessageOrganizerService.new(current_user.phone_number).call
     redirect_to '/reminders'
   end

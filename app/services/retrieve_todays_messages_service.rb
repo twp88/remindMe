@@ -11,7 +11,7 @@ class RetrieveTodaysMessagesService
 
   def messages
     retrieve_reminders.map do |r|
-      "You have #{r.what} at #{r.time}, location: #{r.where}"
+      { "You have #{r.what} at #{r.time}, location: #{r.where}" => r }
     end
   end
 end

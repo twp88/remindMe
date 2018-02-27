@@ -21,7 +21,7 @@ class TribeMembersController < ApplicationController
     @tribe_member = TribeMember.new(tribe_member_params)
     @tribe_member.tribe_id = session[:passed_tribe_id]
     @tribe_member.save!
-    redirect_to new_tribe_member_path
+    redirect_to tribe_path(session[:passed_tribe_id])
   end
 
   def update

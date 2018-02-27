@@ -15,7 +15,10 @@ class MessageOrganizerService
 
   def send_each_message
     messages.each do |m|
-      SendMessageService.new(m, @phone_number).call
+      m.each do |k, v|
+        numbers = CollateTribeNumbersService.new(v).call
+        numbers.each { |n| SendMessageService.new(k, n).call }
+      end
     end
   end
 end
