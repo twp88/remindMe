@@ -1,4 +1,4 @@
-# RemindMe
+# RemindMe [WIP]
 
 Ever had problems remembering everything that's going on in your life? Do you
 are you a glorified taxi service for your family, but can never remember where
