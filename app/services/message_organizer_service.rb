@@ -1,8 +1,4 @@
 class MessageOrganizerService
-  def initialize(phone_number)
-    @phone_number = phone_number
-  end
-
   def call
     send_each_message
   end
