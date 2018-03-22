@@ -1,0 +1,9 @@
+<ul>
+  <% @reminders.each do |reminder| %>
+    <li>
+      <h3>
+        <%= link_to reminder.what, controller: "reminders", action: "show", id: reminder._id%>
+      </h3>
+    </li>
+  <% end %>
+</ul>

@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :tribes
 
   root to: 'reminders#index'
+
+  get 'search', to: 'search#search'
 end
